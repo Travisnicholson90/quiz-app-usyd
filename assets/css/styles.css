@@ -1,0 +1,109 @@
+
+:root {
+    --font-size: clamp(.3rem, 10vw + .5rem, 2.5rem);
+    --width: clamp(15rem, 30vw + 1rem, 60rem);
+    --fs-h1: clamp(.5rem, 10vw + 1rem, 3rem);
+    --fs-p: clamp(.3rem, 5vw + .5rem, 2rem);
+
+
+
+}
+
+body {
+    display: grid;
+    place-items: center;
+}
+/* * header styles */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: var(--fs-p);
+
+}
+header p {
+    width: 900px;
+    text-align: center;
+}
+header.hide {
+    display: none;
+}
+
+.start-quiz {
+    width: var(--width);
+    background: blue;
+    color: white;
+    padding: 1rem;
+}
+
+/*  * question styles */
+
+
+.quiz-container {
+    padding: 1rem;
+}
+
+.hide {
+    display: none;
+}
+.question-container button {
+    display: grid;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem 0;
+    padding: .5rem 1rem;
+    width: clamp(15rem, 30vw + 1rem, 60rem);
+    
+
+}
+
+h1, h2 {
+    font-size: clamp(.5rem, 10vw + 1rem, 3rem);
+}
+
+
+p {
+    font-size: clamp(.3rem, 5vw + .5rem, 2rem);
+}
+
+.question {
+    font-size: var(--fs-h1);
+}
+
+.answer {
+    display: flex;
+    flex-direction: column;
+    margin: .5rem 0;
+    width: var(--width);
+    background: green;
+    color: white;
+    font-size: var(--fs-p);
+}
+
+form {
+    font-size: var(--fs-p);
+    margin-top: 2rem;
+}
+
+.submit {
+    background-color: blue;
+    color: white;
+    font-size: var(--fs-p);
+}
+
+/*  * high scores list  */
+
+.list {
+    width: var(--width);
+    padding: .5rem;
+    background: orange;
+    color: black;
+    font-weight: 900;
+    font-size: var(--fs-p);
+    display: flex;
+    flex-direction: column;
+}
+
+.list-item {
+    color: white;
+}
