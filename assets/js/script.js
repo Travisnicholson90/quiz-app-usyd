@@ -8,9 +8,11 @@ const finalScore = document.querySelector('.score');
 const clock = document.querySelector('.clock');
 const form = document.querySelector('.form');
 const formInput = document.querySelector('.form-input');
-const submitButton = document.querySelector('.submit')
-const highScores = document.querySelector('.high-scores')
+const submitButton = document.querySelector('.submit');
+const highScores = document.querySelector('.high-scores');
 
+
+//quiz questions and answers array
 let quiz = [
     {
         q: 'Which of the following is not a data type',
@@ -38,7 +40,7 @@ let quiz = [
 //start score at 0
 let score = 0;
 
-//set the currentQuestion to the quiz[0]
+//set the currentQuestion to the index[0]
 let quizIndex = 0;
 let currentQuestion = quiz[quizIndex];
 // store updated quiz.length
@@ -54,8 +56,8 @@ function startQuiz() {
         quizContainer.classList.remove('hide')
         header.classList.add('hide')
         highScores.classList.add('hide')
+        
         let setTimer = setInterval(timer, 1000);
-                
         function timer() {
             timeStart--;
             clock.textContent = timeStart;
@@ -89,7 +91,7 @@ function getQuestion() {
         answerButton.textContent = answers;
     
         
-
+        //set event listener for the answers button
         answerButton.addEventListener('click', function(event) {
             let correctAnswer = event.target
             console.log(correctAnswer);
@@ -98,13 +100,15 @@ function getQuestion() {
             //start score counter
             if(correctAnswer.textContent === quiz[quizIndex].correct) {
                 console.log('correct');
-                score++;
+                //increment score by 1
+                score++; 
                 finalScore.textContent = `  ${score} / ${quizLength}`
                 //set score to local storage
                 localStorage.setItem("score", score);
 
             } else {
                 //time penalty of 15 seconds for wrong answers
+                //time = time - 15sec
                 timeStart -= 15;
                 console.log('wrong');
             }
@@ -128,7 +132,6 @@ function gameOver() {
     quizContainer.classList.add('hide');
     scores.classList.remove('hide');
     clearInterval(setTimer);
-
 }
 
 // submit initials to save score to local storage. 
@@ -151,13 +154,16 @@ console.log(highScoresInitials);
 let highScoresResults = JSON.parse(localStorage.getItem("score"));
 console.log(highScoresResults);
 
-    const list = document.querySelector('.list');
+
+//create an li for the high scores 
+const list = document.querySelector('.list');
     if(highScoresInitials !== null) {
-        const li = document.createElement('li')
-        list.appendChild(li)
-        li.className = 'list-item'
-        li.textContent = highScoresInitials
-    }
+            const li = document.createElement('li')
+            list.appendChild(li)
+            li.className = 'list-item'
+            li.textContent = highScoresInitials         
+        };
+    
     
     if(highScoresResults !== null) {
         const li = document.createElement('li')
