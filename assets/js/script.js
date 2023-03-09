@@ -87,9 +87,9 @@ function getQuestion() {
         let answers = currentQuestion.a[i];
         let answerButton = document.createElement('button');
         quizContainer.appendChild(answerButton);
-        answerButton.className = 'answer answerButton';
+        answerButton.className = 'btn btn-outline-primary m-1 bs-body-bg answer answerButton';
         answerButton.textContent = answers;
-    
+        // <button type="button" class="btn btn-outline-primary">Primary</button>
         
         //set event listener for the answers button
         answerButton.addEventListener('click', function(event) {
