@@ -4,39 +4,44 @@
     --width: clamp(15rem, 30vw + 1rem, 60rem);
     --fs-h1: clamp(.5rem, 10vw + 1rem, 3rem);
     --fs-p: clamp(.3rem, 5vw + .5rem, 2rem);
+    --bd-bg: #212529;
+    --btn: #0a58ca;
 
+}
 
+.clock {
+    position: absolute;
+    top: 50px;
+    font-size: 2rem;
+}
 
+.card {
+    border: none;
+    background: var(--bd-bg);
+    color: white;
 }
 
 body {
     display: grid;
     place-items: center;
+    background: var(--bd-bg);
+    color: white;
 }
 /* * header styles */
-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: var(--fs-p);
 
-}
-header p {
-    width: 900px;
-    text-align: center;
-}
 header.hide {
     display: none;
 }
 
-.start-quiz {
+/* .start-quiz {
     width: var(--width);
     background: blue;
     color: white;
     padding: 1rem;
-}
+} */
 
 /*  * question styles */
+
 
 
 .quiz-container {
@@ -46,7 +51,7 @@ header.hide {
 .hide {
     display: none;
 }
-.question-container button {
+/* .question-container button {
     display: grid;
     flex-direction: column;
     justify-content: center;
@@ -55,16 +60,16 @@ header.hide {
     width: clamp(15rem, 30vw + 1rem, 60rem);
     
 
-}
+} */
 
-h1, h2 {
+/* h1, h2 {
     font-size: clamp(.5rem, 10vw + 1rem, 3rem);
-}
+} */
 
 
-p {
+/* p {
     font-size: clamp(.3rem, 5vw + .5rem, 2rem);
-}
+} */
 
 .question {
     font-size: var(--fs-h1);
@@ -73,10 +78,8 @@ p {
 .answer {
     display: flex;
     flex-direction: column;
-    margin: .5rem 0;
-    width: var(--width);
-    background: green;
-    color: white;
+    /* margin: .5rem 0; */
+    /* width: var(--width);  */
     font-size: var(--fs-p);
 }
 
@@ -85,25 +88,15 @@ form {
     margin-top: 2rem;
 }
 
-.submit {
-    background-color: blue;
+/* .submit {
+    background-color: var(--btn);
     color: white;
     font-size: var(--fs-p);
-}
+} */
 
 /*  * high scores list  */
 
-.list {
-    width: var(--width);
-    padding: .5rem;
-    background: orange;
-    color: black;
-    font-weight: 900;
-    font-size: var(--fs-p);
-    display: flex;
-    flex-direction: column;
-}
-
 .list-item {
-    color: white;
+    color: var(--btn);
+    list-style: none;
 }
